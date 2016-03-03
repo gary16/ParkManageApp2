@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +31,7 @@ import com.zoway.parkmanage2.bean.ParksDetail;
 import com.zoway.parkmanage2.receiver.UpdateUiReceiver;
 import com.zoway.parkmanage2.service.TerminalService;
 import com.zoway.parkmanage2.utils.PathUtils;
+import com.zoway.parkmanage2.utils.TimeUtil;
 
 public class MainActivity extends Activity {
 
@@ -208,7 +210,7 @@ public class MainActivity extends Activity {
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
-
+			holder.tv3.setText("");
 			String parkno = ParksDetail.idxLists.get(position);
 			ParkInfo pr = ParksDetail.parkLists.get(parkno);
 			// 空闲
@@ -218,6 +220,22 @@ public class MainActivity extends Activity {
 			// 待确认停
 			else if (pr.getState().endsWith("待确认停车")) {
 				convertView.setBackgroundColor(0xffffff00);
+				// Log.i("parkno", pr.getParkNo());
+				// long diff = TimeUtil.getTime().getTime()
+				// - pr.getReachTime().getTime();
+				// int tday = (int) diff / (86400000);
+				// int thour = (int) (diff / (3600000)) % 24;
+				// int tmin = (int) (diff / (60000)) % 60;
+				// String texist = String
+				// .format("%2d日%2d时%2d分", tday, thour, tmin).replace(" ",
+				// "0");
+				// holder.tv3.setText(texist);
+				// holder.tv3.setTextSize(20);
+				// if (diff > 1380000) {
+				// holder.tv3.setTextColor(0xffcc0033);
+				// } else {
+				//
+				// }
 
 			}
 			// 在停
@@ -230,9 +248,7 @@ public class MainActivity extends Activity {
 			}
 			holder.tv1.setText(pr.getParkNo());
 			holder.tv1.setTextSize(28);
-			holder.tv1.setTextColor(0xffffffff);
-			holder.tv3.setText("0天12小时59分");
-			holder.tv3.setTextSize(18);
+			holder.tv1.setTextColor(0xff000000);
 
 			return convertView;
 		}

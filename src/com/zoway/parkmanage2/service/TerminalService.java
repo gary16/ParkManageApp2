@@ -101,16 +101,15 @@ public class TerminalService extends Service {
 		public void run() {
 			while (flg1) {
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(20000);
 					GetChangedParks gcp = new GetChangedParks();
 					ArrayList<String> li = gcp
 							.whenHaveChangeParks(LoginBean4Wsdl.getTerminalId());
-					if (li.size() > 0) {
-						Intent intent = new Intent(
-								"com.zoway.parkmanage2.receiver.UpdateUiReceiver");
-						TerminalService.this.sendBroadcast(intent);
-					}
 					updateAllNotify();
+					Intent intent = new Intent(
+							"com.zoway.parkmanage2.receiver.UpdateUiReceiver");
+					TerminalService.this.sendBroadcast(intent);
+
 				} catch (Exception er) {
 
 				}
