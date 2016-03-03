@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zoway.parkmanage2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".view.MainActivityNotused"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleInstance" >
+        </activity>
+        <activity android:name=".view.HeadActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+
+        <service android:name=".service.TerminalService" >
+        </service>
+
+        <activity android:name=".view.OcrResultActivity" >
+        </activity>
+        <activity android:name=".view.ShowOcrPhotoActivity" >
+        </activity>
+        <activity android:name=".view.InputInfoActivity" >
+        </activity>
+        <activity android:name=".view.TakeOcrPhotoActivity" >
+        </activity>
+        <activity android:name=".view.PaybillActivity" >
+        </activity>
+        <activity android:name=".view.PayListsActivity" >
+        </activity>
+        <activity
+            android:name="com.zoway.parkmanage2.view.ParkInfoActivity"
+            android:label="@string/title_activity_park_info" >
+        </activity>
+
+        <service
+            android:name="com.wintone.plateid.AuthService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="wintone.plateid.authservice" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.wintone.plateid.RecogService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="wintone.plateid.recogService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

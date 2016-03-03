@@ -1,0 +1,195 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zoway.parkmanage.view.PayBillActivity" >
+
+    <RelativeLayout
+        android:id="@+id/ly1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="left" >
+
+        <TextView
+            android:id="@+id/lblcartype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="10dp"
+            android:text="小型汽车"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtcarnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/lblcartype"
+            android:text="粤X123456"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblpark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtcarnumber"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="10dp"
+            android:text="车位位置"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtpark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtcarnumber"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/lblpark"
+            android:text="测试路段"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblparktime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtpark"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="停放时间"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtparktime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtpark"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/lblparktime"
+            android:text="2015年12月12日 24時60分"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblleavetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtparktime"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="离开时间"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtleavetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtparktime"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/lblleavetime"
+            android:text="2015年12月12日 24時60分"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtleavetime"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="停车费用"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtleavetime"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/lblmoney"
+            android:text="-1元"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/ly1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" >
+
+        <Button
+            android:id="@+id/btnsure4escape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="6dp"
+            android:background="#ff30cf86"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="确认逃费"
+            android:textColor="#ffffffff"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnsure4print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/btnsure4escape"
+            android:background="#ff30cf86"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="补打凭条"
+            android:textColor="#ffffffff"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnsure4bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnsure4escape"
+            android:layout_marginBottom="6dp"
+            android:layout_marginRight="6dp"
+            android:background="#ff30cf86"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="确认缴费"
+            android:textColor="#ffffffff"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnsure4ingore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnsure4print"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/btnsure4bill"
+            android:background="#ff30cf86"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="确认走费"
+            android:textColor="#ffffffff"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
